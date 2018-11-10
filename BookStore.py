@@ -121,3 +121,7 @@ b6.grid(row = 7, column = 3)
 
 
 window.mainloop()
+
+
+
+# Activate Environment Scripts/activate
