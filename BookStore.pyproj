@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>BookStore</Name>
     <RootNamespace>BookStore</RootNamespace>
+    <InterpreterId>MSBuild|BookStore|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,21 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="backend.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="BookStore.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="BookStore\">
+      <Id>BookStore</Id>
+      <Version>3.6</Version>
+      <Description>BookStore (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
